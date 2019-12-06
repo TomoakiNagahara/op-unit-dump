@@ -79,7 +79,7 @@ class Dump
 		self::_Escape($args);
 
 		//	...
-		switch( $mime = \Env::Mime() ){
+		switch( \Env::Mime() ){
 			case 'text/css':
 				self::MarkCss($args, $trace);
 				break;
@@ -93,25 +93,26 @@ class Dump
 				self::MarkJson($args, $trace);
 				break;
 
+			case 'text/plain':
+				self::MarkPlain($args, $trace);
+				break;
+
 			case 'text/html':
 			default:
 				//	...
 				if( \Unit::Load('webpack') ){
-					//	...
-					\OP\UNIT\WebPack::Js(
-					[__DIR__.'/mark',
-					 __DIR__.'/mark']
-					);
-
-					//	...
-					\OP\UNIT\WebPack::Js( __DIR__.'/dump' );
-					\OP\UNIT\WebPack::Css(
-					[__DIR__.'/mark',
-					 __DIR__.'/dump']
-					);
+					//	Set to webpack list.
+					static $is_webpack;
+					if(!$is_webpack ){
+						$is_webpack = true;
+						//	..
+						\OP\UNIT\WebPack::Js( [__DIR__.'/mark', __DIR__.'/dump']);
+						\OP\UNIT\WebPack::Css([__DIR__.'/mark', __DIR__.'/dump']);
+					}
 				}
 				//	...
 				self::MarkHtml($args, $trace);
+			break;
 		}
 	}
 
@@ -171,6 +172,19 @@ class Dump
 		}
 	}
 
+	/** MarkPlain
+	 *
+	 * @param mixed $value
+	 * @param array $trace
+	 */
+	static function MarkPlain($value, $trace)
+	{
+		echo CompressPath($trace['file']);
+		echo ' #'.$trace['line'].PHP_EOL;
+		print_r($value);
+	//	var_dump($value);
+	}
+
 	/** MarkJS
 	 *
 	 * @param mixed $value
@@ -190,7 +204,8 @@ class Dump
 	 */
 	static function MarkJson($value, $trace)
 	{
-		global $_JSON;
+		global $_JSON; // Why used global variable?
+		$mark = [];
 		$mark['message']   = $value;
 		$mark['backtrace'] = $trace;
 		$_JSON['admin']['mark'][] = $mark;
