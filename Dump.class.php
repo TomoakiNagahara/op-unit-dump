@@ -157,8 +157,9 @@ class Dump implements IF_UNIT
 	 */
 	static function MarkCss($value, $trace)
 	{
-		print PHP_EOL;
-		print "/* $value */".PHP_EOL;
+		echo PHP_EOL.'/*';
+		include(__DIR__.'/include/mark_css.php');
+		echo '*/'.PHP_EOL;
 	}
 
 	/** MarkHtml
