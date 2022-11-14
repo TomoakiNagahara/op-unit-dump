@@ -15,9 +15,10 @@
  */
 namespace OP\UNIT;
 
-/** Used class
+/** Use
  *
  */
+use OP\OP;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
@@ -113,7 +114,7 @@ class Dump implements IF_UNIT
 		$trace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1];
 
 		//	...
-		$trace['file'] = CompressPath($trace['file']);
+		$trace['file'] = OP::CompressPath($trace['file']);
 
 		//	Arguments.
 		$args = func_get_args()[0];
