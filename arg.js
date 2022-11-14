@@ -1,4 +1,13 @@
 
+/** op-unit-dump:/arg.js
+ *
+ * @created    ????
+ * @version    1.0
+ * @package    op-unit-dump
+ * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright  Tomoaki Nagahara All right reserved.
+ */
+
 //	...
 if( $OP === undefined ){
 	$OP = {};
