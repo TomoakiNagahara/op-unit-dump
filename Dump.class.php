@@ -217,8 +217,29 @@ class Dump implements IF_UNIT
 		echo "{$trace['file']} #{$trace['line']} - ";
 
 		//	...
-		if( count($value) === 1 ){
-			print_r($value[0]);
+		$count = count($value);
+
+		//	...
+		if( $count === 0 ){
+			//	...
+			echo '(empty)';
+		}else
+		if( $count === 1 ){
+			//	...
+			$value = $value[0];
+
+			//	...
+			switch( gettype($value) ){
+				case 'NULL':
+					$value = 'null';
+					break;
+				case 'boolean':
+					$value = $value ? 'true': 'false';
+					break;
+			}
+
+			//	...
+			print_r($value);
 		}else{
 			print_r($value);
 		};
