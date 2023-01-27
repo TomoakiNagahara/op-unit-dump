@@ -236,6 +236,9 @@ class Dump implements IF_UNIT
 				case 'boolean':
 					$value = $value ? 'true': 'false';
 					break;
+				case 'string':
+					$value = str_replace(["\r","\n","\t"], ['\r','\n','\t'], $value);
+					break;
 			}
 
 			//	...
