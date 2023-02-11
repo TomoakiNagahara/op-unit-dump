@@ -18,7 +18,9 @@ namespace OP\UNIT;
 /** Use
  *
  */
+use Exception;
 use OP\OP;
+use OP\OP_CI;
 use OP\OP_CORE;
 use OP\OP_UNIT;
 use OP\IF_UNIT;
@@ -40,7 +42,7 @@ class Dump implements IF_UNIT
 	/** trait
 	 *
 	 */
-	use OP_CORE, OP_UNIT;
+	use OP_CORE, OP_UNIT, OP_CI;
 
 	/** Escape variable.
 	 *
@@ -48,6 +50,12 @@ class Dump implements IF_UNIT
 	 */
 	static function _Escape(&$args)
 	{
+		//	...
+		if(!is_array($args) ){
+			return;
+		}
+
+		//	...
 		foreach( $args as &$arg ){
 			self::_EscapeByType($arg);
 		}
@@ -248,20 +256,26 @@ class Dump implements IF_UNIT
 		static $_file_len = 0;
 
 		//	...
-		$file = $trace['file'];
-		$line = $trace['line'];
+		if( $file = $trace['file'] ?? null ){
+			$line = $trace['line'] ?? null;
 
-		//	...
-		if( $_file_len < strlen($file) ){
-			$_file_len = strlen($file);
+			//	...
+			if( $_file_len < strlen($file) ){
+				$_file_len = strlen($file);
+			}
+
+			//	Padding
+			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
+			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
+
+			//	...
+			echo "{$file} #{$line} - ";
 		}
 
-		//	Padding
-		$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
-		$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
-
 		//	...
-		echo "{$file} #{$line} - ";
+		if(!is_array($value) ){
+			$value = [$value];
+		}
 
 		//	...
 		$count = count($value);
@@ -284,7 +298,7 @@ class Dump implements IF_UNIT
 					$value = $value ? 'true': 'false';
 					break;
 				case 'string':
-					$value = str_replace(["\r","\n","\t"], ['\r','\n','\t'], $value);
+					$value = $value ? str_replace(["\r","\n","\t"], ['\r','\n','\t'], $value): '""';
 					break;
 			}
 
@@ -317,6 +331,11 @@ class Dump implements IF_UNIT
 	 */
 	static function MarkJson($value, $trace)
 	{
+		//	...
+		if(!\OP\Unit::isInstall('Api') ){
+			throw new Exception("Not installed Unit of API.");
+		}
+
 		//	For Eclipse validatiion warning.
 		'\OP\UNIT\Api'::Dump(['trace'=>$trace,'value'=>$value]);
 	}
