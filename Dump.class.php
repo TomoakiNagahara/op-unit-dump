@@ -213,8 +213,23 @@ class Dump implements IF_UNIT
 	 */
 	static function MarkPlain($value, $trace)
 	{
+		static $_file_len = 0;
+
 		//	...
-		echo "{$trace['file']} #{$trace['line']} - ";
+		$file = $trace['file'];
+		$line = $trace['line'];
+
+		//	...
+		if( $_file_len < strlen($file) ){
+			$_file_len = strlen($file);
+		}
+
+		//	Padding
+		$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
+		$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
+
+		//	...
+		echo "{$file} #{$line} - ";
 
 		//	...
 		$count = count($value);
