@@ -19,7 +19,7 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = new CI();
+$ci = OP::Unit('CI');
 
 //	_Escape
 $result = null;
@@ -32,7 +32,7 @@ $args   = new \stdClass();
 $ci->Set('_Object', $result, $args);
 
 //	Mark
-$result = "unit:/ci/CI.class.php #265 - null\n";
+$result = "unit:/ci/CI.class.php #304 - null\n";
 $args   =  null;
 $ci->Set('Mark', $result, $args);
 
