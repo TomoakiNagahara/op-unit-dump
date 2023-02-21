@@ -241,7 +241,7 @@ class Dump implements IF_UNIT
 		}else
 		if( $count === 1 ){
 			//	...
-			$value = $value[0];
+			$value = $value[0] ?? null;
 
 			//	...
 			switch( gettype($value) ){
