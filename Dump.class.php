@@ -158,7 +158,33 @@ class Dump implements IF_UNIT
 	 */
 	static function MarkPlain($value, $trace)
 	{
+		//	...
 		require_once(__DIR__.'/function/toString.php');
+
+		//	...
+		static $_file_len = 0;
+		if( $file = $trace['file'] ?? null ){
+			$line = $trace['line'] ?? null;
+
+			//	...
+			if( $_file_len < strlen($file) ){
+				$_file_len = strlen($file);
+			}
+
+			//	Padding
+			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
+			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
+
+			//	...
+			echo "{$file} #{$line} - ";
+		}
+
+		//	...
+		if(!is_array($value) ){
+			$value = [$value];
+		}
+
+		//	...
 		foreach( $value as $variable){
 			echo toString($variable).PHP_EOL;
 		}
