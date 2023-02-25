@@ -32,14 +32,14 @@ $args   = new \stdClass();
 $ci->Set('_Object', $result, $args);
 
 //	Mark
-$result = "unit:/ci/CI.class.php #304 - null\n";
-$args   =  null;
+$result = "unit:/ci/CI.class.php #304 - ";
+$args   = [];
 $ci->Set('Mark', $result, $args);
 
-//	MarkCss
-$result =  "\n/*\nD(null)\n*/\n";
-$args   =  [null, []];
-$ci->Set('MarkCss', $result, $args);
+//	MarkPlain
+$result =  "null\ntrue\nfalse\n1\n\"1\"\n";
+$args   =  [[null, true, false, 1,'1'],[]];
+$ci->Set('MarkPlain', $result, $args);
 
 //	MarkHtml
 $args   =  [
@@ -60,8 +60,8 @@ $args   =  [
 		'line' => 100,
 	]
 ];
-$result = "/var/www/foo/bar.php  #100 - null\n";
-$ci->Set('MarkPlain', $result, $args);
+$result = "/var/www/foo/bar.php #100 - null\n";
+$ci->Set('_MarkPlain_', $result, $args);
 
 //	MarkJS
 $args   =  [
