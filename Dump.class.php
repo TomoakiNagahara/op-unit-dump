@@ -156,14 +156,12 @@ class Dump implements IF_UNIT
 	 * @param mixed $value
 	 * @param array $trace
 	 */
-	static function MarkCss($value, $trace)
+	static function MarkPlain($value, $trace)
 	{
 		require_once(__DIR__.'/function/toString.php');
-		echo PHP_EOL.'/*'.PHP_EOL;
 		foreach( $value as $variable){
 			echo toString($variable).PHP_EOL;
 		}
-		echo '*/'.PHP_EOL;
 	}
 
 	/** MarkHtml
