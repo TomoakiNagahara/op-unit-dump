@@ -25,6 +25,7 @@ use OP\IF_UNIT;
 use OP\Env;
 use function OP\Json;
 use function OP\CompressPath;
+use function OP\UNIT\Dump\toString;
 
 /** Dump
  *
@@ -157,8 +158,11 @@ class Dump implements IF_UNIT
 	 */
 	static function MarkCss($value, $trace)
 	{
-		echo PHP_EOL.'/*';
-		include(__DIR__.'/include/mark_css.php');
+		require_once(__DIR__.'/function/toString.php');
+		echo PHP_EOL.'/*'.PHP_EOL;
+		foreach( $value as $variable){
+			echo toString($variable).PHP_EOL;
+		}
 		echo '*/'.PHP_EOL;
 	}
 
