@@ -126,7 +126,9 @@ class Dump implements IF_UNIT
 		//	...
 		switch( Env::Mime() ){
 			case 'text/css':
-				self::MarkCss($args, $trace);
+				echo "\n/*\n";
+				self::MarkPlain($args, $trace);
+				echo "*/\n";
 				break;
 
 			case 'text/javascript':
