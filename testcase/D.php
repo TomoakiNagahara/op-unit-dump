@@ -1,5 +1,5 @@
 <?php
-/** op-unit-dump:/unit/dump/action.php
+/** op-unit-dump:/testcase/d.php
  *
  * @creation  2019-03-08
  * @version   1.0
@@ -7,9 +7,6 @@
  * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
  * @copyright Tomoaki Nagahara All right reserved.
  */
-
-/* @var $app    \OP\UNIT\App  */
-/* @var $args    array        */
 //	...
 D( true, false, null, TRUE, FALSE, NULL,
 	0, 123, 1.23,
@@ -33,3 +30,6 @@ D( true, false, null, TRUE, FALSE, NULL,
 		]
 	]
 );
+
+//	...
+D('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
