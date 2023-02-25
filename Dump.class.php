@@ -206,12 +206,13 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** MarkPlain
+	/** _MarkPlain_
 	 *
+	 * @deprecated 2023-02-26
 	 * @param mixed $value
 	 * @param array $trace
 	 */
-	static function MarkPlain($value, $trace)
+	static function _MarkPlain_($value, $trace)
 	{
 		static $_file_len = 0;
 
