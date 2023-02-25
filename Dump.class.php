@@ -118,7 +118,7 @@ class Dump implements IF_UNIT
 		$trace['file'] = OP::CompressPath($trace['file']);
 
 		//	Arguments.
-		$args = func_get_args()[0];
+		$args = func_get_args()[0] ?? [];
 
 		//	...
 		self::_Escape($args);
