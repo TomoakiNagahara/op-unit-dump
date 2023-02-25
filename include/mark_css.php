@@ -1,6 +1,7 @@
 <?php
 /** op-unit-dump:/include/mark_css.php
  *
+ * @deprecated 2023-02-25
  * @created    2022-10-23
  * @version    1.0
  * @package    op-unit-dump
@@ -50,8 +51,12 @@ foreach( $values as $value ){
 			$value = get_class($value);
 			break;
 
+		case 'array':
+			$value = serialize($value);
+			break;
+
 		default:
-			$value = __FILE__.' #'.__LINE__.' undefined type is '.$type;
+			$value = __FILE__.' #'.__LINE__." This type is undefined. ($type)";
 	}
 
 	//	...
