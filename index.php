@@ -33,8 +33,8 @@ require_once(__DIR__.'/Dump.class.php');
 	try{
 		//	...
 		$webpack = Unit::Instantiate('WebPack');
-		$webpack->Js ([__DIR__.'/mark', __DIR__.'/dump']);
-		$webpack->Css([__DIR__.'/mark', __DIR__.'/dump']);
+		$webpack->Set('js',  [__DIR__.'/mark', __DIR__.'/dump']);
+		$webpack->Set('css', [__DIR__.'/mark', __DIR__.'/dump']);
 
 	}catch( \Exception $e ){
 		//	...
