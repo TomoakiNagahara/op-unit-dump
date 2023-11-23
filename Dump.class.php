@@ -182,7 +182,7 @@ class Dump implements IF_UNIT
 			}
 
 			//	Padding
-			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
+		//	$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
 			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
 
 			//	...
