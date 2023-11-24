@@ -198,6 +198,11 @@ class Dump implements IF_UNIT
 		foreach( $value as $variable){
 			echo toString($variable).PHP_EOL;
 		}
+
+		//	...
+		if( empty($value) ){
+			echo PHP_EOL;
+		}
 	}
 
 	/** MarkHtml
