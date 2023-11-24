@@ -32,7 +32,7 @@ $args   = new \stdClass();
 $ci->Set('_Object', $result, $args);
 
 //	Mark
-$result = "unit:/ci/CI.class.php #536 - ";
+$result = "unit:/ci/CI.class.php #590 - \n";
 $args   = [];
 $ci->Set('Mark', $result, $args);
 
