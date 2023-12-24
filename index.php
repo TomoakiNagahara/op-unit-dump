@@ -39,9 +39,12 @@ require_once(__DIR__.'/Dump.class.php');
 	try{
 		/* @var $webpack UNIT\WebPack */
 		/*
+		//	Only http(s).
+		if( Env::isHttp() ){
 		$webpack = Unit::Instantiate('WebPack');
 		$webpack->Set('js',  [__DIR__.'/mark', __DIR__.'/dump']);
 		$webpack->Set('css', [__DIR__.'/mark', __DIR__.'/dump']);
+		}
 		*/
 		OP()->WebPack()->Auto('./webpack/');
 		/*
