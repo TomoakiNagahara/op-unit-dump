@@ -37,7 +37,7 @@ require_once(__DIR__.'/Dump.class.php');
 		$webpack->Set('js',  [__DIR__.'/mark', __DIR__.'/dump']);
 		$webpack->Set('css', [__DIR__.'/mark', __DIR__.'/dump']);
 		*/
-		OP()->WebPack()->Auto('./');
+		OP()->WebPack()->Auto('./webpack/');
 
 	}catch( \Exception $e ){
 		//	...
