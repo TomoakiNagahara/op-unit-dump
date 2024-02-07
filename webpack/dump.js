@@ -84,7 +84,7 @@ if( $OP === undefined ){
 	}
 
 	//	...
-	function click(e){
+	function click( /* e */ ){
 		if( this.parentNode.childNodes[1].childNodes[0].hidden ){
 			this.parentNode.childNodes[1].childNodes[0].hidden = false;
 		}else{
