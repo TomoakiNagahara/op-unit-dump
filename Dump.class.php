@@ -190,6 +190,12 @@ class Dump implements IF_UNIT
 		}
 
 		//	...
+		if( empty($value) ){
+			echo PHP_EOL;
+			return;
+		}
+
+		//	...
 		if(!is_array($value) ){
 			$value = [$value];
 		}
