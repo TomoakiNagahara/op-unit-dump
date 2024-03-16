@@ -21,6 +21,7 @@ namespace OP;
 
 //	...
 if(!Env::isAdmin() ){
+	OP::Notice('Not Admin.');
 	return;
 }
 
