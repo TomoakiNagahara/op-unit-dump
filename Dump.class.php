@@ -186,9 +186,12 @@ class Dump implements IF_UNIT
 				$_file_len = strlen($file);
 			}
 
+			//	For CI
+			if( \OP\Env::AppID() !== _OP_APP_ID_CI_ ){
 			//	Padding
-		//	$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
+			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
 			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
+			}
 
 			//	...
 			echo "{$file} #{$line} - ";
