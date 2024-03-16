@@ -206,6 +206,10 @@ class Dump implements IF_UNIT
 		//	...
 		if(!is_array($value) ){
 			$value = [$value];
+			/*
+			echo toString($value).PHP_EOL;
+			return;
+			*/
 		}
 
 		//	...
