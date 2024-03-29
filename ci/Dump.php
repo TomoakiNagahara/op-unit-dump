@@ -32,7 +32,7 @@ $args   = new \stdClass();
 $ci->Set('_Object', $result, $args);
 
 //	Mark
-$result = "unit:/ci/CI.class.php #614 - \n";
+$result = "unit:/ci/CI_Client.class.php #ci - \n";
 $args   = [];
 $ci->Set('Mark', $result, $args);
 
@@ -52,7 +52,8 @@ $args   =  [
 $result = '<div class=\'OP_MARK\'>{"file":"\/var\/www\/foo\/bar.php","line":100,"args":[null]}</div>'."\n";
 $ci->Set('MarkHtml', $result, $args);
 
-//	MarkPlain
+//	_MarkPlain_
+/*
 $args   =  [
 	[null],
 	[
@@ -61,6 +62,9 @@ $args   =  [
 	]
 ];
 $result = "/var/www/foo/bar.php #100 - null\n";
+*/
+$args   = [null, null];
+$result = 'Notice: This method was deprecated.';
 $ci->Set('_MarkPlain_', $result, $args);
 
 //	MarkJS
@@ -75,8 +79,9 @@ $result = 'console.log(JSON.parse(\'{"file":"\/var\/www\/foo\/bar.php","line":10
 $ci->Set('MarkJS', $result, $args);
 
 //	MarkJson
+$is_api = file_exists( OP()->MetaPath('asset:/unit/api/') );
 $args   = [null,[]];
-$result = 'Exception: Not installed Unit of API.';
+$result = $is_api ? NULL: 'Exception: Not installed Unit of API.';
 $ci->Set('MarkJson', $result, $args);
 
 //	Template
