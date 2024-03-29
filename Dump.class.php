@@ -187,7 +187,13 @@ class Dump implements IF_UNIT
 			}
 
 			//	For CI
-			if( \OP\Env::AppID() !== _OP_APP_ID_CI_ ){
+			if( \OP\Env::AppID() === _OP_APP_ID_CI_ ){
+				//	If called from CI_Client
+				if( $file === 'unit:/ci/CI_Client.class.php' ){
+					//	For CI of Dump.
+					$line = 'ci';
+				}
+			}else{
 			//	Padding
 			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
 			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
