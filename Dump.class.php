@@ -366,7 +366,7 @@ class Dump implements IF_UNIT
 	static function MarkJson($value, $trace)
 	{
 		//	...
-		if(!\OP\Unit::isInstall('Api') ){
+		if(!\OP\Unit::isInstalled('Api') ){
 			throw new Exception("Not installed Unit of API.");
 		}
 
