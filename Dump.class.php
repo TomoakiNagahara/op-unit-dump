@@ -276,17 +276,22 @@ class Dump implements IF_UNIT
 
 	/** _MarkPlain_
 	 *
-	 * @deprecated 2023-02-26
+	 * @deprecated  2023-02-26
 	 * @param mixed $value
 	 * @param array $trace
 	 */
 	static function _MarkPlain_($value, $trace)
 	{
+		//	...
+		OP()->Notice('This method was deprecated.');
+		return;
+
+		//	...
 		static $_file_len = 0;
 
 		//	...
 		if( $file = $trace['file'] ?? null ){
-			$line = $trace['line'] ?? null;
+			$line = $trace['line'] ?? '';
 
 			//	...
 			if( $_file_len < strlen($file) ){
