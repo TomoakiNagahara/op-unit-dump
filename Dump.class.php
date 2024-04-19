@@ -179,7 +179,10 @@ class Dump implements IF_UNIT
 		//	...
 		static $_file_len = 0;
 		if( $file = $trace['file'] ?? null ){
-			$line = $trace['line'] ?? null;
+			$line = $trace['line'] ?? '';
+			if( $line ){
+				$line = (string)$line;
+			}
 
 			//	...
 			if( $_file_len < strlen($file) ){
