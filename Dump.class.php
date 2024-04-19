@@ -190,7 +190,7 @@ class Dump implements IF_UNIT
 			}
 
 			//	For CI
-			if( \OP\Env::AppID() === _OP_APP_ID_CI_ ){
+			if( defined('_OP_APP_ID_CI_') and \OP\Env::AppID() === _OP_APP_ID_CI_ ){
 				//	If called from CI_Client
 				if( $file === 'unit:/ci/CI_Client.class.php' ){
 					//	For CI of Dump.
