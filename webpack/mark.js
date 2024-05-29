@@ -9,9 +9,9 @@
  */
 
 //	...
-if( $OP === undefined ){
+if( 'undefined' === typeof $OP ){
 	$OP = {};
-}
+};
 
 //	...
 (function(){
