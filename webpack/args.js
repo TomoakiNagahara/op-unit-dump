@@ -9,12 +9,12 @@
  */
 
 //	...
-if( $OP === undefined ){
+if( 'undefined' === typeof $OP ){
 	$OP = {};
 };
 
 //...
-if( $OP.Args === undefined ){
+if( 'undefined' === typeof $OP.Args ){
 	//	...
 	$OP.Args = function(args){
 		//	...
