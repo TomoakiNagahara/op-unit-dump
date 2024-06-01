@@ -277,78 +277,6 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** _MarkPlain_
-	 *
-	 * @deprecated  2023-02-26
-	 * @param mixed $value
-	 * @param array $trace
-	 */
-	static function _MarkPlain_($value, $trace)
-	{
-		//	...
-		OP()->Notice('This method was deprecated.');
-		return;
-
-		//	...
-		static $_file_len = 0;
-
-		//	...
-		if( $file = $trace['file'] ?? null ){
-			$line = $trace['line'] ?? '';
-
-			//	...
-			if( $_file_len < strlen($file) ){
-				$_file_len = strlen($file);
-			}
-
-			//	Padding
-			$file = str_pad($file, $_file_len, ' ', STR_PAD_RIGHT);
-			$line = str_pad($line,          3, ' ', STR_PAD_LEFT);
-
-			//	...
-			echo "{$file} #{$line} - ";
-		}
-
-		//	...
-		if(!is_array($value) ){
-			$value = [$value];
-		}
-
-		//	...
-		$count = count($value);
-
-		//	...
-		if( $count === 0 ){
-			//	...
-			echo '(empty)';
-		}else
-		if( $count === 1 ){
-			//	...
-			$value = $value[0] ?? null;
-
-			//	...
-			switch( gettype($value) ){
-				case 'NULL':
-					$value = 'null';
-					break;
-				case 'boolean':
-					$value = $value ? 'true': 'false';
-					break;
-				case 'string':
-					$value = $value ? str_replace(["\r","\n","\t"], ['\r','\n','\t'], $value): '""';
-					break;
-			}
-
-			//	...
-			print_r($value);
-		}else{
-			print_r($value);
-		};
-
-		//	...
-		echo PHP_EOL;
-	}
-
 	/** MarkJS
 	 *
 	 * @param mixed $value
@@ -373,7 +301,7 @@ class Dump implements IF_UNIT
 			throw new Exception("Not installed Unit of API.");
 		}
 
-		//	For Eclipse validatiion warning.
+		//	For Eclipse validation warning.
 		'\OP\UNIT\Api'::Dump(['trace'=>$trace,'value'=>$value]);
 	}
 }
