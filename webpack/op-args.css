@@ -1,0 +1,57 @@
+
+/** op-unit-dump:/webpac/op-args.css
+ *
+ * @genesis    2017-07-31 app-skeleton-webpack?
+ * @created    2024-06-21 move from op-webpack-css
+ * @version    1.0
+ * @package    op-unit-dump
+ * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @copyright  Tomoaki Nagahara All right reserved.
+ */
+
+span.args > span.arg:not(:last-child):after {
+	margin-right: 0.25em;
+	content: ',';
+}
+
+span.args > span.arg > span.quote:before,
+span.args > span.arg > span.quote:after {
+	content: '"';
+}
+
+span.args > span.arg > span.boolean.true {
+	color: var(--op-color-true);
+}
+
+span.args > span.arg > span.null,
+span.args > span.arg > span.boolean.false {
+	color: var(--op-color-false);
+}
+
+span.args > span.arg > span.number {
+	font-style: italic;
+}
+
+span.args > span.arg > span.integer {
+	color: inherit;
+}
+
+span.args > span.arg > span.double {
+	color: inherit;
+}
+
+span.args > span.arg > span.array {
+	color: var(--op-color-purple);
+}
+
+span.args > span.arg > span.object {
+	color: var(--op-color-green);
+}
+
+span.args > span.arg > span.string > span.meta {
+	color: var(--op-color-meta);
+}
+
+span.args > span.arg > span.string > span.meta.space {
+	text-decoration: underline;
+}
