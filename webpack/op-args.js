@@ -119,13 +119,13 @@
 	 */
 	function __meta(s){
 		return s
+				.replace(/&/g,  '&amp;')
 				.replace(/</g,  '&lt;')
 				.replace(/>/g,  '&gt;')
 				.replace(/ /g,  '<span class="meta space">&nbsp;</span>')
 				.replace(/\t/g, '<span class="meta tab">\\t</span>')
 				.replace(/\r/g, '<span class="meta cr">\\r</span>')
 				.replace(/\n/g, '<span class="meta lf">\\n</span>')
-				.replace(/&/g,  '<span class="meta amp">&amp;</span>')
 				;
 	};
 })();
