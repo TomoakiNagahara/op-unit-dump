@@ -118,7 +118,8 @@
 	 * @return string
 	 */
 	function __meta(s){
-		return s.replace(/</g,  '&lt;')
+		return s
+				.replace(/</g,  '&lt;')
 				.replace(/>/g,  '&gt;')
 				.replace(/ /g,  '<span class="meta space">&nbsp;</span>')
 				.replace(/\t/g, '<span class="meta tab">\\t</span>')
