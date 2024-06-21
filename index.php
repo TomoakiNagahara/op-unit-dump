@@ -44,7 +44,9 @@ require_once(__DIR__.'/Dump.class.php');
 		$webpack->Set('css', [__DIR__.'/mark', __DIR__.'/dump']);
 		*/
 		OP()->WebPack()->Auto('./webpack/');
+		/*
 		OP()->WebPack()->Auto('asset:/webpack/css/args.css');
+		*/
 		OP()->WebPack()->Auto('asset:/webpack/css/color.css');
 
 	}catch( \Exception $e ){
