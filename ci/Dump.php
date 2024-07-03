@@ -19,7 +19,7 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-$ci = OP::Unit('CI');
+$ci = OP::Unit('CI')::Config();
 
 //	_Escape
 $result = null;
@@ -91,4 +91,10 @@ $result = 'Exception: Deny upper directory specification.';
 $ci->Set('Template', $result, $args);
 
 //	...
-return $ci->GenerateConfig();
+$method = '_EscapeByType';
+$args   =  null;
+$result =  null;
+$ci->Set($method, $result, $args);
+
+//	...
+return $ci->Get();
