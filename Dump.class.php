@@ -137,7 +137,7 @@ class Dump implements IF_UNIT
 		self::_Escape($args);
 
 		//	...
-		$mime = Env::Mime();
+		$mime = strtolower(Env::Mime());
 
 		//	...
 		if( strpos($mime, 'text/') === false ){
