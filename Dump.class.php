@@ -137,7 +137,16 @@ class Dump implements IF_UNIT
 		self::_Escape($args);
 
 		//	...
-		switch( Env::Mime() ){
+		$mime = Env::Mime();
+
+		//	...
+		if( strpos($mime, 'text/') === false ){
+			//	Not text
+			return;
+		}
+
+		//	...
+		switch( $mime ){
 			case 'text/css':
 				echo "\n/*\n";
 				self::MarkPlain($args, $trace);
