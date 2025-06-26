@@ -1,10 +1,10 @@
 
-/** op-unit-dump:/args.js
+/**	op-unit-dump:/args.js
  *
  * @created    ????
  * @version    1.0
  * @package    op-unit-dump
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All right reserved.
  */
 

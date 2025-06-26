@@ -1,16 +1,16 @@
 
-/** op-unit-dump:/webpack/op-args.js
+/**	op-unit-dump:/webpack/op-args.js
  *
  * @genesis   2017-07-31 app-skeleton-webpack?
  * @created   2024-06-21 moved from op-webpack-js
  * @version   1.0
  * @package   op-unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author    Tomoaki Nagahara 
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	...
 (function(){
-	/** Generate arguments spans.
+	/**	Generate arguments spans.
 	 *
 	 * @param  array
 	 * @return DOM
@@ -34,7 +34,7 @@
 		return args;
 	}
 
-	/** Create each argument span.
+	/**	Create each argument span.
 	 *
 	 * @param  mixed
 	 * @return DOM
@@ -112,7 +112,7 @@
 		return span;
 	}
 
-	/** Show meta character.
+	/**	Show meta character.
 	 *
 	 * @param  string
 	 * @return string

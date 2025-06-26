@@ -1,10 +1,10 @@
 
-/** op-unit-dump:/mark.js
+/**	op-unit-dump:/mark.js
  *
  * @creation  2017-07-28
  * @version   1.0
  * @package   op-unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
