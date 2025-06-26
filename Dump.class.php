@@ -23,7 +23,6 @@ use Exception;
 use OP\OP;
 use OP\OP_CI;
 use OP\OP_CORE;
-use OP\OP_UNIT;
 use OP\Env;
 use OP\IF_DUMP;
 use function OP\Json;
@@ -43,7 +42,7 @@ class Dump implements IF_DUMP
 	/**	trait
 	 *
 	 */
-	use OP_CORE, OP_UNIT, OP_CI;
+	use OP_CORE, OP_CI;
 
 	/**	Escape variable.
 	 *
