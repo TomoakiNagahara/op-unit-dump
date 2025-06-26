@@ -24,8 +24,8 @@ use OP\OP;
 use OP\OP_CI;
 use OP\OP_CORE;
 use OP\OP_UNIT;
-use OP\IF_UNIT;
 use OP\Env;
+use OP\IF_DUMP;
 use function OP\Json;
 use function OP\CompressPath;
 use function OP\UNIT\Dump\toString;
@@ -38,7 +38,7 @@ use function OP\UNIT\Dump\toString;
  * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
-class Dump implements IF_UNIT
+class Dump implements IF_DUMP
 {
 	/**	trait
 	 *
