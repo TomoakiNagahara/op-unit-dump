@@ -1,19 +1,19 @@
 <?php
-/** op-unit-dump:/function/toString.php
+/**	op-unit-dump:/function/toString.php
  *
  * @created    2023-02-25
  * @version    1.0
  * @package    op-unit-dump
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All right reserved.
  */
 
-/** namespace
+/**	namespace
  *
  */
 namespace OP\UNIT\Dump;
 
-/** Variable to text string.
+/**	Variable to text string.
  *
  * @created    2023-02-25
  * @param      mixed
@@ -49,7 +49,7 @@ function toString($variable, $indent=0):string
 	return $return;
 }
 
-/** Array to text string.
+/**	Array to text string.
  *
  * @created    2023-02-25
  * @param      array       $array
