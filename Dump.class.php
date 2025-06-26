@@ -122,7 +122,7 @@ class Dump implements IF_DUMP
 		$trace = debug_backtrace( DEBUG_BACKTRACE_IGNORE_ARGS, 2)[1];
 
 		//	...
-		$trace['file'] = OP::CompressPath($trace['file']);
+		$trace['file'] = OP()->Path($trace['file']);
 
 		//	Arguments.
 		$args = func_get_args()[0] ?? [];
