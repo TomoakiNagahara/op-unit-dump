@@ -1,19 +1,19 @@
 <?php
-/** op-unit-dump:/ci/Dump.php
+/**	op-unit-dump:/ci/Dump.php
  *
  * @created    2023-02-11
  * @version    1.0
  * @package    op-unit-dump
- * @author     Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author     Tomoaki Nagahara
  * @copyright  Tomoaki Nagahara All right reserved.
  */
 
-/** Declare strict
+/**	Declare strict
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	namespace
  *
  */
 namespace OP;
