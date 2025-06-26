@@ -1,10 +1,10 @@
 <?php
-/** op-unit-dump:/testcase/d.php
+/**	op-unit-dump:/testcase/d.php
  *
  * @creation  2019-03-08
  * @version   1.0
  * @package   op-unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
 //	...
