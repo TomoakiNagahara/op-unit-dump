@@ -1,19 +1,19 @@
 <?php
-/** op-unit-dump:/index.php
+/**	op-unit-dump:/index.php
  *
  * @creation  2018-04-13
  * @version   1.0
  * @package   op-unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-/** Declare strict
+/**	Declare strict
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	namespace
  *
  * @creation  2019-02-22
  */
