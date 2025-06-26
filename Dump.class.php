@@ -1,26 +1,22 @@
 <?php
-/**
- * unit-dump:/Dump.class.php
+/**	op-unit-dump:/Dump.class.php
  *
  * @created   2018-04-13
- * @version   1.0
- * @package   unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
 
-/** Declare strict
+/**	Declare strict
  *
  */
 declare(strict_types=1);
 
-/** namespace
+/**	namespace
  *
- * @created   2018-04-20
  */
 namespace OP\UNIT;
 
-/** Use
+/**	Use
  *
  */
 use Exception;
@@ -34,22 +30,22 @@ use function OP\Json;
 use function OP\CompressPath;
 use function OP\UNIT\Dump\toString;
 
-/** Dump
+/**	Dump
  *
  * @created   2018-04-13
  * @version   1.0
- * @package   unit-dump
- * @author    Tomoaki Nagahara <tomoaki.nagahara@gmail.com>
+ * @package   op-unit-dump
+ * @author    Tomoaki Nagahara
  * @copyright Tomoaki Nagahara All right reserved.
  */
 class Dump implements IF_UNIT
 {
-	/** trait
+	/**	trait
 	 *
 	 */
 	use OP_CORE, OP_UNIT, OP_CI;
 
-	/** Escape variable.
+	/**	Escape variable.
 	 *
 	 * @param array &$args
 	 */
@@ -66,7 +62,7 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** Separate for _Object() from _Escape().
+	/**	Separate for _Object() from _Escape().
 	 *
 	 * @created   2020-09-06
 	 * @param     mixed        &$arg
@@ -95,7 +91,7 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** Object to array.
+	/**	Object to array.
 	 *
 	 * @created   2020-09-06
 	 * @param     array        $arg
@@ -116,7 +112,7 @@ class Dump implements IF_UNIT
 		$arg = $arr;
 	}
 
-	/** Mark
+	/**	Mark
 	 *
 	 */
 	static function Mark()
@@ -175,7 +171,7 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** MarkCss
+	/**	MarkCss
 	 *
 	 * @param mixed $value
 	 * @param array $trace
@@ -241,7 +237,7 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** MarkHtml
+	/**	MarkHtml
 	 *
 	 * @param mixed $value
 	 * @param array $trace
@@ -286,7 +282,7 @@ class Dump implements IF_UNIT
 		}
 	}
 
-	/** MarkJS
+	/**	MarkJS
 	 *
 	 * @param mixed $value
 	 * @param array $trace
@@ -298,7 +294,7 @@ class Dump implements IF_UNIT
 		echo "console.log(JSON.parse('{$trace}'), JSON.parse('{$value}'));";
 	}
 
-	/** MarkJson
+	/**	MarkJson
 	 *
 	 * @param mixed $value
 	 * @param array $trace
