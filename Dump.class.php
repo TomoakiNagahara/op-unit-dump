@@ -23,7 +23,6 @@ use Exception;
 use OP\OP;
 use OP\OP_CI;
 use OP\OP_CORE;
-use OP\Env;
 use OP\IF_DUMP;
 use function OP\Json;
 use function OP\CompressPath;
@@ -132,7 +131,7 @@ class Dump implements IF_DUMP
 		self::_Escape($args);
 
 		//	...
-		$mime = strtolower(Env::Mime());
+		$mime = strtolower( OP()->Mime() );
 
 		//	...
 		if( strpos($mime, 'text/') === false ){
