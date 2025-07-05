@@ -272,11 +272,14 @@ class Dump implements IF_DUMP
 		};
 
 		//	...
-		OP()->Json($mark, 'OP_MARK');
+		require_once(_ROOT_CORE_.'/function/Json.php');
+
+		//	...
+		\OP\Json($mark, 'OP_MARK');
 
 		//	...
 		foreach( $later as $value ){
-			OP()->Json($value, 'OP_DUMP');
+			\OP\Json($value, 'OP_DUMP');
 		}
 	}
 
