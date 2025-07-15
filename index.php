@@ -20,8 +20,8 @@ declare(strict_types=1);
 namespace OP;
 
 //	...
-if(!Env::isAdmin() ){
-	OP::Notice('Not Admin.');
+if(!OP::isAdmin() ){
+	OP::Error('Not Admin.');
 	return;
 }
 
@@ -46,7 +46,7 @@ require_once(__DIR__.'/Dump.class.php');
 		$webpack->Set('css', [__DIR__.'/mark', __DIR__.'/dump']);
 		}
 		*/
-		OP()->WebPack()->Auto('./webpack/');
+		OP()->Unit()->WebPack()->Auto('./webpack/');
 		/*
 		OP()->WebPack()->Auto('asset:/webpack/css/args.css');
 		*/
