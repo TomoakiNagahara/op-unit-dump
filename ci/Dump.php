@@ -79,7 +79,7 @@ $result = 'console.log(JSON.parse(\'{"file":"\/var\/www\/foo\/bar.php","line":10
 $ci->Set('MarkJS', $result, $args);
 
 //	MarkJson
-$is_api = file_exists( OP()->MetaPath('asset:/unit/api/') );
+$is_api = file_exists( OP()->Path('asset:/unit/api/') );
 $args   = [null,[]];
 $result = $is_api ? NULL: 'Exception: Not installed Unit of API.';
 $ci->Set('MarkJson', $result, $args);
