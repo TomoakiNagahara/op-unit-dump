@@ -135,6 +135,7 @@ class Dump implements IF_DUMP
 
 		//	...
 		if( strpos($mime, 'text/') === false ){
+			OP()->Error('MIME is not set.');
 			//	Not text
 			return;
 		}
