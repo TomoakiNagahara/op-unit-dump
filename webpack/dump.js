@@ -103,3 +103,5 @@ if( 'undefined' === typeof $OP ){
 		}, 0);
 	});
 })();
+
+console.log('op-unit-dump is loading.');
