@@ -47,6 +47,7 @@ require_once(__DIR__.'/Dump.class.php');
 		}
 		*/
 		OP()->Unit()->WebPack()->Auto('./webpack/');
+		OP()->Unit()->WebPack()->Auto('asset:/webpack/css/color.css');
 		/*
 		OP()->WebPack()->Auto('asset:/webpack/css/args.css');
 		*/
