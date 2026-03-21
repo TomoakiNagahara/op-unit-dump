@@ -2,16 +2,17 @@
 /**	op-unit-dump:/Dump.class.php
  *
  * @created   2018-04-13
- * @author    Tomoaki Nagahara
- * @copyright Tomoaki Nagahara All right reserved.
+ * @license   Apache-2.0
+ * @package   op-unit-dump
+ * @copyright Tomoaki Nagahara
  */
 
-/**	Declare strict
+/**	Declare strict type
  *
  */
 declare(strict_types=1);
 
-/**	namespace
+/**	Namespace
  *
  */
 namespace OP\UNIT;
@@ -30,11 +31,7 @@ use function OP\UNIT\Dump\toString;
 
 /**	Dump
  *
- * @created   2018-04-13
- * @version   1.0
- * @package   op-unit-dump
- * @author    Tomoaki Nagahara
- * @copyright Tomoaki Nagahara All right reserved.
+ * @rebirth   2018-04-13
  */
 class Dump implements IF_DUMP
 {
