@@ -40,6 +40,17 @@ class Dump implements IF_DUMP
 	 */
 	use OP_CORE, OP_CI;
 
+	/**	Automatically.
+	 *
+	 * @rebirth    2026-03-21
+	 * @param      mixed      $value
+	 */
+	static function Auto( $value )
+	{
+		require_once(_ROOT_CORE_.'/function/Json.php');
+		\OP\Json($value, 'OP_DUMP');
+	}
+
 	/**	Escape variable.
 	 *
 	 * @param array &$args
